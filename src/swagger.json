@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "RentalX Documentation",
-    "description": "This is a API rent",
+    "description": "This is a API Rent",
     "version": "1.0.0",
     "contact": {
       "site": "raphaelfreire.dias@gmail.com"
