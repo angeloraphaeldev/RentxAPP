@@ -1,11 +1,11 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "RentalX Documentation",
+    "title": "RentX Documentation",
     "description": "This is a API Rent",
     "version": "1.0.0",
     "contact": {
-      "site": "raphaelfreire.dias@gmail.com"
+      "mail": "raphaelfreire.dias@gmail.com"
     }
   },
   "paths": {
@@ -70,6 +70,74 @@
               }
             }
           }
+        }
+      }
+    },
+    "/categories/import":{
+      "post": {
+        "tags": ["Category"],
+        "summary":" Upload a Category",
+        "description": " Upload a New Category",
+        "requestBody":{
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "201": {
+                "description":"Created"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/specification":{
+      "post":{
+        "tags":["Specifications"],
+        "summary":"Create a Specification",
+        "description":"Create a new Specification",
+        "requestBody": {
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref":"#/definitions/Specification"
+              },
+              "example": {
+                "name": "Specification name simple",
+                "description": "Specification description simple"
+              }
+            }
+          }
+        },
+        "responses":{
+          "201": {
+            "description":"Created"
+          },
+          "500": {
+            "description": "Specifications Already Exists"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Specification": {
+      "type": "object",
+      "properties":{
+        "name":{
+          "type": "string"
+        },
+        "description":{
+          "type":"string"
         }
       }
     }
