@@ -73,12 +73,12 @@
         }
       }
     },
-    "/categories/import":{
+    "/categories/import": {
       "post": {
         "tags": ["Category"],
-        "summary":" Upload a Category",
+        "summary": " Upload a Category",
         "description": " Upload a New Category",
-        "requestBody":{
+        "requestBody": {
           "content": {
             "multipart/form-data": {
               "schema": {
@@ -93,23 +93,23 @@
             },
             "responses": {
               "201": {
-                "description":"Created"
+                "description": "Created"
               }
             }
           }
         }
       }
     },
-    "/specification":{
-      "post":{
-        "tags":["Specifications"],
-        "summary":"Create a Specification",
-        "description":"Create a new Specification",
+    "/specification": {
+      "post": {
+        "tags": ["Specifications"],
+        "summary": "Create a Specification",
+        "description": "Create a new Specification",
         "requestBody": {
-          "content":{
-            "application/json":{
-              "schema":{
-                "$ref":"#/definitions/Specification"
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Specification"
               },
               "example": {
                 "name": "Specification name simple",
@@ -118,9 +118,9 @@
             }
           }
         },
-        "responses":{
+        "responses": {
           "201": {
-            "description":"Created"
+            "description": "Created"
           },
           "500": {
             "description": "Specifications Already Exists"
@@ -132,12 +132,12 @@
   "definitions": {
     "Specification": {
       "type": "object",
-      "properties":{
-        "name":{
+      "properties": {
+        "name": {
           "type": "string"
         },
-        "description":{
-          "type":"string"
+        "description": {
+          "type": "string"
         }
       }
     }
