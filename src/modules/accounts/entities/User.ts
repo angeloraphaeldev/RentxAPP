@@ -1,8 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
-
-@Entity()
-class User {
+@Entity("users")
+class Users {
   @PrimaryColumn()
   id: string;
 
@@ -29,9 +28,9 @@ class User {
 
   constructor() {
     if (!this.id) {
-      this.id === uuidV4();
+      this.id = uuidV4();
     }
   }
 }
 
-export { User };
+export { Users };
